@@ -23,7 +23,7 @@ const NavBar = () => {
         <div className="right-nav align-middle mt-0.5 mr-4 hidden md:flex">
           <ul className="flex gap-10 items-center">
             {!auth ? (
-              <div className="before-login">
+              <div className="before-login flex gap-8">
                 <li>
                   <Link to="/login">
                     <button className="font-Raleway p-3 border-blue-400 border-2 text-black rounded hover:text-white hover:bg-blue-400">
