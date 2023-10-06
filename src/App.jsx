@@ -1,36 +1,60 @@
 // import './App.css'
-import NavBar from "./components/NavBar"
-import Socials from "./components/Socials.jsx"
-import Home from "./components/Home"
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import SignUp from "./SignUp";
+import Shop from "./Shop";
+import Cart from "./Cart";
+import Login from "./Login";
+import PrivateComponents from "./PrivateComponents";
+import Farmerdashboard from "./dashboard/farmerdashboard";
+import Processordashboard from "./dashboard/ProcessorDashboard";
 
-import SignUp from "./SignUp"
-import LogIn from "./LogIn"
-import News from "./components/News"
-import Farmerdashboard from "./dashboard/farmerdashboard"
-import Processordashboard from "./dashboard/ProcessorDashboard"
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  const auth = JSON.parse(localStorage.getItem("user"));
+  const category = auth ? auth.category : "";
+
   return (
     <>
       <Router>
-      {/* <NavBar /> */}
+        <NavBar />
         <Routes>
-      
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="/news" element={<News />}></Route>
-          <Route path="/signup" element={<SignUp />}></Route>
-          <Route path="/login" element={<LogIn />}></Route>
-          <Route path="/farmerdashboard" element={<Farmerdashboard />}></Route>
-          <Route path="/processordashboard" element={<Processordashboard />}></Route>
-          <Route path="/"></Route>
-        </Routes>
-      {/* <Socials /> */}
+              <Route path="/home" element={<Home />} />
+              <Route element={<PrivateComponents />}>
+                <Route
+                  path="/"
+                  element={
+                    category === "farmer" ? (
+                      <Farmerdashboard />
+                    ) : category === "processor" ? (
+                      <Processordashboard />
+                    ) : category === "buyer" ? (
+                      <Processordashboard />
+                    ) : (
+                      <Home/>
+                    )
+                  }
+                />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/logout" element={<SignUp />} />
+                <Route path="/farmerdashboard" element={<Farmerdashboard />} />
+                <Route
+                  path="/Processordashboard"
+                  element={<Processordashboard />}
+                />
+                <Route
+                  path="/buyerdashboard"
+                  element={<Processordashboard />}
+                />
+              </Route>
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

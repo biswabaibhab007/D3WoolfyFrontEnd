@@ -9,7 +9,7 @@ import Socials from './Socials'
 const Home = () => {
   return (
     <>
-    <NavBar />
+    {/* <NavBar /> */}
     <div name="home" className='  Home layout flex-wrap flex justify-betwee px-10 py-10 l:flex-nowrap pt-20 pb-3'>
       <div className='md:home-text-content max-w-screen-sm '>
       <motion.h1 
