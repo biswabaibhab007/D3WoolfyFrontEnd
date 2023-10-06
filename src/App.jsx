@@ -6,8 +6,8 @@ import Home from "./components/Home"
 import SignUp from "./SignUp"
 import LogIn from "./LogIn"
 import News from "./components/News"
-import Farmerdashboard from "./dashboard/farmerdashboard"
-import Processordashboard from "./dashboard/ProcessorDashboard"
+// import Farmerdashboard from "./dashboard/farmerdashboard"
+// import Processordashboard from "./dashboard/ProcessorDashboard"
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -23,8 +23,8 @@ function App() {
           <Route path="/news" element={<News />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/login" element={<LogIn />}></Route>
-          <Route path="/farmerdashboard" element={<Farmerdashboard />}></Route>
-          <Route path="/processordashboard" element={<Processordashboard />}></Route>
+          {/* <Route path="/farmerdashboard" element={<Farmerdashboard />}></Route> */}
+          {/* <Route path="/processordashboard" element={<Processordashboard />}></Route> */}
           {/* <Route path="/"></Route> */}
         </Routes>
       {/* <Socials /> */}
