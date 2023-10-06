@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProcessorDashboard = () => {
+const Processordashboard = () => {
   return (
     <div>
       <h1>This is processor Dashboard</h1>
@@ -8,4 +8,4 @@ const ProcessorDashboard = () => {
   );
 }
 
-export default ProcessorDashboard;
+export default Processordashboard;
