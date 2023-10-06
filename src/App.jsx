@@ -8,6 +8,7 @@ import Login from "./Login";
 import PrivateComponents from "./PrivateComponents";
 import Farmerdashboard from "./dashboard/farmerdashboard";
 import Processordashboard from "./dashboard/ProcessorDashboard";
+import Buyerdashboard from "./dashboard/BuyerDashboard.jsx";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -20,7 +21,7 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-              <Route path="/home" element={<Home />} />
+              <Route path="/home" element={<Processordashboard />} />
               <Route element={<PrivateComponents />}>
                 <Route
                   path="/"
@@ -30,7 +31,7 @@ function App() {
                     ) : category === "processor" ? (
                       <Processordashboard />
                     ) : category === "buyer" ? (
-                      <Processordashboard />
+                      <Buyerdashboard />
                     ) : (
                       <Home/>
                     )
@@ -45,8 +46,7 @@ function App() {
                   element={<Processordashboard />}
                 />
                 <Route
-                  path="/buyerdashboard"
-                  element={<Processordashboard />}
+                  path="/buyerdashboard" element={<Buyerdashboard />}
                 />
               </Route>
               <Route path="/signup" element={<SignUp />} />
