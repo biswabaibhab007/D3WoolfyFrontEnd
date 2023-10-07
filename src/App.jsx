@@ -21,7 +21,7 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-              <Route path="/home" element={<Processordashboard />} />
+              <Route path="/home" element={<Farmerdashboard />} />
               <Route element={<PrivateComponents />}>
                 <Route
                   path="/"
